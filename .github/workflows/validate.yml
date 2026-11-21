@@ -1,0 +1,15 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@main
+    with:
+      hacs_category: integration
