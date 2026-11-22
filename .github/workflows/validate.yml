@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   validate:
-    uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@chore/ha-standards
+    uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@main
     with:
       hacs_category: integration
       # The template ships no brand images. Remove this line once
