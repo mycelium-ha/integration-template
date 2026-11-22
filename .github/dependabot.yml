@@ -1,6 +1,14 @@
+# Keeps GitHub Actions and the pinned test tooling current. Updates of
+# pytest-homeassistant-custom-component bump Home Assistant core: check that
+# hacs.json `homeassistant` still makes sense.
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "weekly"
+      interval: weekly
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3

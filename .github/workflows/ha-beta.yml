@@ -1,0 +1,14 @@
+name: Home Assistant beta
+
+# Early warning: runs the tests against the newest Home Assistant pre-release.
+on:
+  schedule:
+    - cron: "41 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  beta:
+    uses: mycelium-ha/.github/.github/workflows/ha-beta.yml@main

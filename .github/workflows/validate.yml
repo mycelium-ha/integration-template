@@ -8,8 +8,18 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@main
     with:
       hacs_category: integration
+      run_mypy: true
+      run_pytest: true
+      pytest_args: --cov
