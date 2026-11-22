@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   validate:
-    uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@main
+    uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@chore/ha-standards
     with:
       hacs_category: integration
       run_mypy: true
