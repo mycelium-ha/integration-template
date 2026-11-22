@@ -1,0 +1,19 @@
+# Groups the generated release notes (ha-release.yml uses --generate-notes) by label.
+changelog:
+  categories:
+    - title: Breaking changes
+      labels: [breaking-change]
+    - title: New devices
+      labels: [device-support]
+    - title: Features
+      labels: [enhancement]
+    - title: Fixes
+      labels: [bug]
+    - title: Translations
+      labels: [translations]
+    - title: Documentation
+      labels: [documentation]
+    - title: Dependencies
+      labels: [dependencies]
+    - title: Other changes
+      labels: ["*"]
