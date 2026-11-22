@@ -20,6 +20,9 @@ jobs:
     uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@chore/ha-standards
     with:
       hacs_category: integration
+      # The template ships no brand images. Remove this line once
+      # custom_components/<domain>/brand/ contains icon.png and logo.png.
+      hacs_ignore: brands
       run_mypy: true
       run_pytest: true
       pytest_args: --cov

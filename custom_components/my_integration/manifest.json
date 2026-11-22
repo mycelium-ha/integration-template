@@ -1,6 +1,7 @@
 {
   "domain": "my_integration",
   "name": "My Integration",
+  "categories": ["diy_makers"],
   "codeowners": ["@mycelium-ha/maintainers"],
   "config_flow": true,
   "documentation": "https://github.com/mycelium-ha/integration-template",

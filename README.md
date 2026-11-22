@@ -35,9 +35,9 @@ pytest --cov
 
 - [ ] Run `python3 scripts/rename_integration.py <domain> "<Name>" <repository>`, then delete the script.
 - [ ] Replace `api.py` with your device's API (or a PyPI library listed in `manifest.json` `requirements`) and adapt the tests.
-- [ ] Check `manifest.json`: `integration_type`, `iot_class`, `codeowners`; set `MANUFACTURER` in `const.py`.
+- [ ] Check `manifest.json`: `categories` ([list](https://contributors.home-assistant.io/core/integrations/categories/)), `integration_type`, `iot_class`, `codeowners`; set `MANUFACTURER` in `const.py`.
 - [ ] Make sure the `@mycelium-ha/maintainers` team exists (or adjust `codeowners` and `.github/CODEOWNERS`).
-- [ ] Add brand images (`icon.png`, `icon@2x.png`, `logo.png`, `logo@2x.png`) to `custom_components/<domain>/brand/`.
+- [ ] Add brand images (`icon.png`, `icon@2x.png`, `logo.png`, `logo@2x.png`) to `custom_components/<domain>/brand/`, then remove `hacs_ignore: brands` from `.github/workflows/validate.yml`.
 - [ ] Update `README.md` with real setup instructions and remove this checklist.
 - [ ] Review `quality_scale.yaml`.
 - [ ] Bump `version` in `manifest.json` and push a matching `vX.Y.Z` tag for the first release.
