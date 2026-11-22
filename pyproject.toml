@@ -1,20 +1,65 @@
-[tool.ruff]
-target-version = "py313"
-line-length = 88
+[project]
+name = "my-integration"
+version = "0.1.0"
+description = "Home Assistant integration template of mycelium-ha."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.14"
+# Runtime dependencies belong in manifest.json `requirements`; test and tooling
+# dependencies are pinned in requirements_test.txt.
+dependencies = []
 
-[tool.ruff.lint]
-select = [
-    "E",
-    "F",
-    "W",
-    "I",
-    "UP",
-    "B",
-    "SIM",
-    "ASYNC",
-]
-ignore = ["E501"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.14"
+files = ["custom_components/my_integration"]
+strict = true
+follow_imports = "silent"
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+# Home Assistant re-exports names without `__all__`.
+module = ["homeassistant.*"]
+implicit_reexport = true
+
+[tool.coverage.run]
+source = ["custom_components/my_integration"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
 
 [tool.ruff.format]
 quote-style = "double"
-indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W", "I", "UP", "B", "SIM",
+    "ASYNC",  # blocking calls in async code
+    "BLE",    # blind except
+    "C4",     # comprehensions
+    "DTZ",    # naive datetimes
+    "FURB",   # modern idioms
+    "G",      # logging format (%s, no f-strings)
+    "LOG",    # logging misuse
+    "PERF",   # performance anti-patterns
+    "PIE",
+    "PT",     # pytest style
+    "RET",
+    "RUF",
+]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["custom_components"]

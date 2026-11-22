@@ -1,0 +1,14 @@
+name: Release
+
+# Bump `version` in manifest.json, merge, then push a matching tag:
+#   git tag v1.2.3 && git push origin v1.2.3
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    uses: mycelium-ha/.github/.github/workflows/ha-release.yml@main

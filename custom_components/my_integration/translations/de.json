@@ -1,0 +1,34 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Gib die Adresse deines Geräts ein.",
+        "data": {
+          "host": "Host"
+        },
+        "data_description": {
+          "host": "Der Hostname oder die IP-Adresse deines Geräts."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung fehlgeschlagen",
+      "unknown": "Unerwarteter Fehler"
+    },
+    "abort": {
+      "already_configured": "Gerät ist bereits eingerichtet"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "value": {
+        "name": "Wert"
+      }
+    }
+  },
+  "exceptions": {
+    "update_failed": {
+      "message": "Fehler bei der Kommunikation mit dem Gerät: {error}"
+    }
+  }
+}

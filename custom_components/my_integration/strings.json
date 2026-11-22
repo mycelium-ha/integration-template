@@ -2,9 +2,33 @@
   "config": {
     "step": {
       "user": {
-        "title": "Set up My Integration",
-        "description": "Confirm to add My Integration to Home Assistant."
+        "description": "Enter the address of your device.",
+        "data": {
+          "host": "Host"
+        },
+        "data_description": {
+          "host": "The hostname or IP address of your device."
+        }
       }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "value": {
+        "name": "Value"
+      }
+    }
+  },
+  "exceptions": {
+    "update_failed": {
+      "message": "Error communicating with the device: {error}"
     }
   }
 }

@@ -8,8 +8,21 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     uses: mycelium-ha/.github/.github/workflows/ha-validate.yml@main
     with:
       hacs_category: integration
+      # The template ships no brand images. Remove this line once
+      # custom_components/<domain>/brand/ contains icon.png and logo.png.
+      hacs_ignore: brands
+      run_mypy: true
+      run_pytest: true
+      pytest_args: --cov

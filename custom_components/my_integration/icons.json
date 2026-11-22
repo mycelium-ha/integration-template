@@ -1,0 +1,9 @@
+{
+  "entity": {
+    "sensor": {
+      "value": {
+        "default": "mdi:gauge"
+      }
+    }
+  }
+}
